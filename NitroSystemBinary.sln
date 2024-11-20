@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitroSystemBinary", "NitroSystemBinary\NitroSystemBinary.csproj", "{4AB4466D-8014-42B8-ACBA-B6E793799E25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitroTest", "NitroTest\NitroTest.csproj", "{150A7C75-069D-4D5D-AF88-C2445EBF345B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{4AB4466D-8014-42B8-ACBA-B6E793799E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AB4466D-8014-42B8-ACBA-B6E793799E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AB4466D-8014-42B8-ACBA-B6E793799E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150A7C75-069D-4D5D-AF88-C2445EBF345B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150A7C75-069D-4D5D-AF88-C2445EBF345B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150A7C75-069D-4D5D-AF88-C2445EBF345B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150A7C75-069D-4D5D-AF88-C2445EBF345B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

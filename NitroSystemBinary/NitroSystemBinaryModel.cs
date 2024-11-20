@@ -1,6 +1,9 @@
 ﻿namespace NitroSystemBinary;
 
-public class NitroSystemBinaryModel
+public class NitroSystemBinaryModel : NitroSystemBinaryFileSection
 {
-    
+    public NitroSystemBinaryModel(byte[] data)
+    {
+        Type = NitroSystemBinaryFileSectionType.Model;
+    }
 }
