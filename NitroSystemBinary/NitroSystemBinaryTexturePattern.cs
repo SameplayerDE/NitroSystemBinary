@@ -22,6 +22,10 @@ public class NitroSystemBinaryTexturePattern : NitroSystemBinaryFileSection
         var patternName = ReadNullTerminatedString(reader);
         reader.ReadBytes(0x2B);
         var materialName = ReadNullTerminatedString(reader);
+        
+        // Frames starten bei 112 am ende, 100 bytes nach pat0
+        // Anzahl der frames bei 76 bytes nach pat0
+        
         //NumTextureNames = reader.ReadByte();
         //NumPaletteNames = reader.ReadByte();
         //var textureNamesOffset = reader.ReadUInt16();
