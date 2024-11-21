@@ -1,30 +1,39 @@
 ﻿using NitroSystemBinary;
 
-const string path = @"A:\ModelExporter\Platin\output_nds\ele_door1_op.nsbtp";
+const string path = @"A:\ModelExporter\Platin\output_nds\";
 
-Console.WriteLine(path);
-var nitroFile = NitroSystemBinaryFile.FromFile(path);
-if (nitroFile == null)
+void PrintSections(NitroSystemBinaryFile file)
 {
-    return;
-}
-Console.WriteLine(nitroFile.Type);
-Console.WriteLine(nitroFile.SectionCount);
-    
-foreach (var section in nitroFile.Sections)
-{
-    if (section == null)
+    foreach (var section in file.Sections)
     {
-        continue;
+        if (section == null)
+        {
+            continue;
+        }
+        
+        //Console.WriteLine("\t" + section.Type);
+        
+        if (section.Type == NitroSystemBinaryFileSectionType.TexturePattern)
+        {
+            var pattern = (NitroSystemBinaryTexturePattern)section;
+            Console.WriteLine("\t\tName: " + pattern.Name);
+            Console.WriteLine("\t\tAnimationCount: " + pattern.AnimationCount);
+            Console.WriteLine("\t\tFrameCount: " + pattern.FrameCount);
+            if (pattern.AnimationCount == 1)
+            {
+                foreach (var texture in pattern.Textures)
+                {
+                    Console.WriteLine("\t\t\t" + texture);
+                }
+            }
+        }
     }
-    Console.WriteLine("\t" + section.Type);
 }
 
-/**
 foreach (var file in Directory.EnumerateFiles(path))
 {
-    Console.WriteLine(path);
-    var nitroFile = NitroSystemBinaryFile.FromFile(path);
+    Console.WriteLine(file);
+    var nitroFile = NitroSystemBinaryFile.FromFile(file);
     if (nitroFile == null)
     {
         continue;
@@ -32,13 +41,13 @@ foreach (var file in Directory.EnumerateFiles(path))
     Console.WriteLine(nitroFile.Type);
     Console.WriteLine(nitroFile.SectionCount);
     
-    foreach (var section in nitroFile.Sections)
-    {
-        if (section == null)
-        {
-            continue;
-        }
-        Console.WriteLine("\t" + section.Type);
-    }
+    PrintSections(nitroFile);
 }
-**/
+
+    
+
+
+
+
+
+
